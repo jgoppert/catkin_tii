@@ -100,7 +100,6 @@ class MavrosOffboardPosctlTest(object):
                     'MAV_LANDED_STATE'][data.landed_state].name))
 
         self.extended_state = data
-
         if not self.sub_topics_ready['ext_state']:
             rospy.loginfo('ext_state ready')
             self.sub_topics_ready['ext_state'] = True
@@ -286,7 +285,7 @@ class MavrosOffboardPosctlTest(object):
     # Helper methods
     #
     def send_pos(self):
-        rate = rospy.Rate(10)  # Hz
+        rate = rospy.Rate(20)  # Hz
         self.pos.header = Header()
         self.pos.header.frame_id = "map"
 
@@ -361,6 +360,7 @@ class MavrosOffboardPosctlTest(object):
 
         # make sure the simulation is ready to start the mission
         self.wait_for_topics(60)
+        print('reached')
         rospy.loginfo('waiting for landed state')
         self.wait_for_landed_state(mavutil.mavlink.MAV_LANDED_STATE_ON_GROUND, 10, -1)
 
@@ -403,12 +403,14 @@ if __name__ == '__main__':
     valy  = 2.0*(8.0*np.random.random(1)-4.0)
     # valy = float(input("Enter Target Y (in m):"))
     # valz = float(input("Enter Target Z (in m):"))
-    valz  = np.random.random(1) + 0.5
+    valz  = 0.7
     
     
-    positions_A = [(0, 0, valz), (valx, valy, valz), (valx, valy, -0.05)]
+    #positions_A = [(0, 0, valz), (valx, valy, valz), (valx, valy, -0.05)]
     #positions_RTH = [(valx, valy, valz), (0, 0, valz), (0, 0, -0.05)]
-
+    
+    #positions_A = [(0, 0, valz), (0, 0, valz), (0, 0, valz), (0 , 0, 0)] # Hover FDI
+    positions_A = [(0, 0, valz), (0, 8.0, valz), (0 , 8.0, 0)] # Cruise FDI
     
     rospy.init_node('offboard')
     test = MavrosOffboardPosctlTest()
@@ -416,7 +418,7 @@ if __name__ == '__main__':
     # Attack
     test.test_posctl(positions_A)
     
-
+    '''
     currx = test.local_position.pose.position.x
     curry = test.local_position.pose.position.y
     
@@ -432,3 +434,4 @@ if __name__ == '__main__':
     test.test_posctl(positions_RTH)
     
     print("Target Mission : [" + str(valx) + ',' + str(valy) + ',' + str(valz) + ']')
+    '''
