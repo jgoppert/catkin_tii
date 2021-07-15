@@ -4,9 +4,6 @@
 [submodule "src/qualisys_ros"]
 	path = src/qualisys_ros
 	url = https://github.com/jgoppert/qualisys_ros
-[submodule "src/mavlink_sitl_gazebo"]
-	path = src/mavlink_sitl_gazebo
-	url = https://github.com/jgoppert/sitl_gazebo
 [submodule "src/mavros"]
 	path = src/mavros
 	url = https://github.com/mavlink/mavros.git
