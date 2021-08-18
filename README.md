@@ -26,6 +26,7 @@ git submodule update --init --recursive
 Reboot computer
 
 ```
+sudo apt install python3-catkin-tools ros-noetic-geographic-msgs ros-noetic-mavlink libgeographic-dev libignition-commond3-graphics-dev
 cd ~/git/purt_catkin_ws
 catkin build
 ```
