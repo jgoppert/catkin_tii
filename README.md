@@ -38,3 +38,13 @@ catkin build
 git submodule update --init --recursive
 ```
 and that it completes successfully.
+
+## Run
+
+After the system is built, run:
+
+```bash
+cd ~/git/purt_catkin_ws
+. ./devel/setup.bash
+roslaunch qualisys_ros abu_dhabi.launch
+```
