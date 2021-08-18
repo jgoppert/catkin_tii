@@ -46,5 +46,5 @@ After the system is built, run:
 ```bash
 cd ~/git/purt_catkin_ws
 . ./devel/setup.bash
-roslaunch qualisys_ros abu_dhabi.launch
+roslaunch qualisys abu_dhabi.launch
 ```
