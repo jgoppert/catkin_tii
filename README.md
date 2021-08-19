@@ -32,6 +32,13 @@ catkin build
 . ./devel/setup.bash
 ```
 
+Make with PX4 to create temporary directories
+
+```bash
+cd ~/git/purt_catkin_ws/src/PX4-Autopilot
+make
+```
+
 Install geographiclib datasets
 
 ```bash
