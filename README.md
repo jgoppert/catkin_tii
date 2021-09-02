@@ -63,3 +63,19 @@ cd ~/git/purt_catkin_ws
 . ./devel/setup.bash
 roslaunch qualisys abu_dhabi.launch
 ```
+
+### Web Video Server (for VR Goggles)
+
+```bash
+sudo apt install ros-noetic-web-video-server
+rosrun web_video_server web_video_server
+```
+
+Navigate to browser on desktop running simulation: 
+http://0.0.0.0:8080/stream?topic=/virtual_cam/usb_cam/image_raw
+
+To navigate to stream on phone, need ip address of simulation computer, phone has to be on 
+the same wifi network:
+http://192.168.123.125:8080/stream?topic=/virtual_cam/usb_cam/image_raw
+
+On the phone use application: https://play.google.com/store/apps/details?id=tk.klurige.fullscreenbrowser&hl=en_US&gl=US, this is a full screen browser app.
