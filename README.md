@@ -73,4 +73,6 @@ To navigate to stream on phone, need ip address of simulation computer, phone ha
 the same wifi network:
 http://192.168.123.125:8080/stream?topic=/vr_image
 
+On android set your screen timeout to 30 minutes. Settings -> Display -> Screen Timeout
+
 On the phone use application: https://play.google.com/store/apps/details?id=tk.klurige.fullscreenbrowser&hl=en_US&gl=US, this is a full screen browser app.
