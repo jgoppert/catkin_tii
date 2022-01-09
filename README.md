@@ -1,5 +1,5 @@
-# purt_catkin_ws
-PURT catkin workspace
+# catkin_tii
+TII catkin workspace
 
 ## Setup
 
